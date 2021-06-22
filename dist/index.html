@@ -53,86 +53,44 @@
   <div class="container">
     main  
     
-    
-    
-    
-    
-
-
-<div class="blog-hero">
-   
-<figure class="blog-hero__img">
-			<img src="images/lazzyimg/s.jpg" alt="s">			 
-   
-
-    <script>
-     window.addEventListener('load' , function(){
-            const winWids=(window.innerWidth > 0) ? window.innerWidth : screen.width;
-            const thisImg = document.querySelector('.blog-hero__img');
-            if(winWids >500){
-                setTimeout(() => {
-                    thisImg.innerHTML+= '<div class="lezzyBig">  <img src="images/lazzyimg/xl.jpg" alt="xl"> <div/>';
-                        const bigimg= document.querySelector('.lezzyBig img');
-                        console.log(bigimg);
-                        bigimg.addEventListener('load', function(){
-                            
-                             this.classList.add('lazzyshow');
-                             tes.innerHTML+=this.classList[0];
-                            console.log(this.classList);
-                        })
-                }, 500);
-            } else {
-                setTimeout(() => {
-                   
-                }, 1500); 
-            }
-           
-    })
-  
-    </script>
-     
-    </figure>
-
-</div>
-
-
-
-
-    <style>
-        .blog-hero{
-
-position: relative;
-height: 0;
-padding-bottom: 60%;
-        }
-        .blog-hero__img , .lezzyBig{ 
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0; 
-
-}
-.blog-hero__img img{ 
-    width: 100%;
-    object-fit: cover;
-}
-
-.lezzyBig img {
-    width: 100%;
-    object-fit: cover; 
-    opacity: 0;
-    transition: 1s;
-}
-
-.lazzyshow{
-    opacity: 1 !important;
-}
+    <div class="row">
+      <div class="col-md-6">  
+ <figure style='padding-bottom: calc(800% / 333 * 100)' class='figure-webp'>
+        <picture  data-priority='10' class='picture-webp toggle-img--js'>
+            <source class='webp-img' srcset="images/toWebp/min-album-design-1.webp" data-img="images/toWebp/album-design-1.webp"  type="image/webp"> 
+            <img class='nowebp-img' src="images/toWebp/min-album-design-1.png" data-img="images/toWebp/album-design-1.png"  alt="album design 1 ">
+        </picture>  
+ </figure>
  
-    </style>
-
-<h1 id="tes"></h1>
+</div>
+ 
+ 
+      <div class="col-md-6">  
+ <figure style='padding-bottom: calc(1% / 2 * 100)' class='figure-webp'>
+        <picture  data-priority='1' class='picture-webp toggle-img--js'>
+            <source class='webp-img' srcset="images/toWebp/min-PikPerfect-Wedding-Albums.webp" data-img="images/toWebp/PikPerfect-Wedding-Albums.webp"  type="image/webp"> 
+            <img class='nowebp-img' src="images/toWebp/min-PikPerfect-Wedding-Albums.jpg" data-img="images/toWebp/PikPerfect-Wedding-Albums.jpg"  alt="album design 1 ">
+        </picture>  
+ </figure>
+ 
+</div>
+ 
+ 
+      <div class="col-md-6">  
+ <figure style='padding-bottom: calc(300% / 333 * 100)' class='figure-webp'>
+        <picture  data-priority='2' class='picture-webp toggle-img--js'>
+            <source class='webp-img' srcset="images/toWebp/min-Professional-Photo-Albums.webp" data-img="images/toWebp/Professional-Photo-Albums.webp"  type="image/webp"> 
+            <img class='nowebp-img' src="images/toWebp/min-Professional-Photo-Albums.jpg" data-img="images/toWebp/Professional-Photo-Albums.jpg"  alt="album design 1 ">
+        </picture>  
+ </figure>
+ 
+</div>
+ 
+ 
+    </div>
     
+    
+ 
   </div>
 
 </main>

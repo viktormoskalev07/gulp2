@@ -21,11 +21,35 @@
   <div class="container">
     main  
     
-    
+    <div class="row">
+      @@include('i/img.html',{
+        src:'album-design-1',
+        type:'png',
+        alt:'album design 1 ',
+        height:'800',
+        width:'333',
+        priority:'10'
+      })
+      @@include('i/img.html',{
+        src:'PikPerfect-Wedding-Albums',
+        type:'jpg',
+        alt:'album design 1 ',
+        height:'1',
+        width:'2',
+        priority:'1'
+      })
+      @@include('i/img.html',{
+        src:'Professional-Photo-Albums',
+        alt:'album design 1 ',
+        type:'jpg',
+        height:'300',
+        width:'333',
+        priority:'2'
+      })
+    </div>
     
     <!-- @@include('./accordion_test.html',{  }) -->
-    @@include('./html-templates/lazzy_img.html',{  })
-    
+ 
   </div>
 
 </main>
