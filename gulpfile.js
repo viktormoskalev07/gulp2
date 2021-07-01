@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
     reload = browserSync.reload;
+    const babel = require('gulp-babel')
 
     var path = {
         build: { //Тут мы укажем куда складывать готовые после сборки файлы
@@ -65,10 +66,15 @@ gulp.task('js:build', async function () {
       // .pipe(rigger()) //Прогоним через rigger
       .pipe(fileinclude()) //Прогоним через fileinclude
       // .pipe(sourcemaps.init()) //Инициализируем sourcemap
+      .pipe(babel({
+        presets: ['@babel/env']
+    }))
       .pipe(terser()) //Сожмем наш js 
+
       // .pipe(sourcemaps.write()) //Пропишем карты
       .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
       .pipe(reload({stream: true})); //И перезагрузим сервер
+      
 });
 
 gulp.task('style:build', async function () {
