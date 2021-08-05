@@ -39,6 +39,7 @@
     "gulp-terser": "^1.2.0"
   },
   "scripts": {
-    "build": "node builder.js"
+    "build": "node build.js",
+    "webp": "node webp.js"
   }
 }

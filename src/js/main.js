@@ -10,13 +10,13 @@ window.onload= function(){
       @@include('modules/noscrol.js') //он вызывается в навигации 
       @@include('modules/nav.js') 
       @@include('modules/fixed-header.js')
-      @@include('modules/imgpreloader.js')
+ 
 
 
 
 
 //  @@include('modules/dropdown.js')
- @@include('modules/accordion.js')
+ 
 
 
  
