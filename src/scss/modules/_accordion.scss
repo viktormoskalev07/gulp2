@@ -1,50 +1,70 @@
-.accordion {
-  cursor: pointer;
+.accordion { 
   width: 100%;
-  border: none;  
+  transition: 0.4s;
+  padding-bottom: 100px;
+  position: relative;
+ 
 
-  &__text{
-    transition: 0.4s;  
-    max-height: 0;
-    overflow: hidden;
-  }
-  &__title {
-    padding:10px 40px 10px 0;
-    cursor: pointer; 
-    position: relative; 
-    &::after {
-      content: url('../images/icons/up.png');
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      transition: transform 0.3s ease-in;
-    } 
-    .is-open &::after {
-      transform: rotate(180deg); 
-    }
+  &__container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
   } 
   &__item {
-    &.is-open{ 
-      .accordion {
-        &__text{
-             max-height: 300px;
-             animation-name: fullHeight;
-             animation-delay: 0.4s;
-             animation-fill-mode: forwards;
-             animation-duration: 0.3;
-
-        }
+    width: 100%;
+    padding-right: 15px;
+    &:first-child{
+      .accordion__title-text{
+        border-top: solid black 2px;
       }
     }
-  }  
-}
-
-@keyframes fullHeight {
-  100%{
-    max-height: 5000px; 
   }
+
+  &__title-text {
+    min-height: 75px;
+    padding: 25px 35px 25px 0;
+    margin: 0;
+    cursor: pointer; 
+    font-size: 18px;
+    font-weight: bold; 
+    position: relative;
+    @include lg {
+      font-size: 30px;
+    }
+ 
+    &::after , &::before {
+         content:' ';
+        right:0;
+        transition:0.3s;
+        font-size: 0;
+        position: absolute;
+        width: 33px;
+        height: 0px;
+        top:calc(50% - 1px); 
+        border-top: 2px solid #000000; 
+    }
+    &::before { 
+        transform: rotate(-90deg); 
+    } 
+    .is-open &::before { 
+      transform: rotate(0deg);  
+    }
+    .is-open &::after { 
+      transform: rotate(180deg);  
+    }
+  }
+
+  &__body { 
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+    border-bottom: 1px solid #000000;  
+  }
+
+  &__content { 
+    width: calc(100% - 45px)
+  }
+ 
+ 
 }

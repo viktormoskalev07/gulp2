@@ -1,6 +1,5 @@
  
-   @import 'components/base';
-   @import 'modules/accordion';
+   @import 'components/base'; 
    @import 'components/width';
    @import 'components/nav';
    @import 'components/header';
@@ -12,8 +11,12 @@
    @import 'components/footer';
    @import 'components/popup'; 
    @import 'components/list';   
-   @import 'modules/images-min';
+
+
+
+ 
 
  
 
 
+@import 'modules/modules.scss'

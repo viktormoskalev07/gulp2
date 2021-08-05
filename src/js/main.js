@@ -11,13 +11,8 @@ window.onload= function(){
       @@include('modules/nav.js') 
       @@include('modules/fixed-header.js')
  
-
-
-
-
-//  @@include('modules/dropdown.js')
  
-
+@@include('modules/accordion.js')
 
  
 
