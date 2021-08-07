@@ -1,10 +1,10 @@
 'use strict';
-
+var sass = require ('gulp-sass') (require ('sass'));
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
     terser  = require('gulp-terser'),
-    sass = require('gulp-sass'),
+    // sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     // rigger = require('gulp-rigger'),
     fileinclude = require('gulp-file-include'),
@@ -12,10 +12,10 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
-    browserSync = require("browser-sync"),
+    browserSync = require("browser-sync"), 
     reload = browserSync.reload;
-    const babel = require('gulp-babel')
-
+    const babel = require('gulp-babel');
+ 
     var path = {
         build: { //Тут мы укажем куда складывать готовые после сборки файлы
           html: 'dist/',
@@ -26,10 +26,11 @@ var gulp = require('gulp'),
         },
         src: { //Пути откуда брать исходники
           html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-          js: ['node_modules/swiper/js/swiper.min.js',
+          js: [
+           
           'src/js/*.js'
           ],//В стилях и скриптах нам понадобятся только main файлы
-          style: 'src/scss/main.scss',
+          style: 'src/scss/*.*',
           img: 'src/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
           fonts: 'src/fonts/**/*.*'
         },
@@ -133,7 +134,7 @@ gulp.task('image:build', async function() {
               }]
           }),
           //jpg lossless
-          imagemin.jpegtran({
+          imagemin.mozjpeg({
               progressive: true
           }),
           //jpg very light lossy, use vs jpegtran
