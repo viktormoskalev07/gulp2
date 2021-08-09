@@ -66,13 +66,13 @@ gulp.task('js:build', async function () {
   gulp.src(path.src.js) //Найдем наш main файл
       // .pipe(rigger()) //Прогоним через rigger
       .pipe(fileinclude()) //Прогоним через fileinclude
-      // .pipe(sourcemaps.init()) //Инициализируем sourcemap
+      .pipe(sourcemaps.init()) //Инициализируем sourcemap
       .pipe(babel({
         presets: ['@babel/env']
     }))
       .pipe(terser()) //Сожмем наш js 
 
-      // .pipe(sourcemaps.write()) //Пропишем карты
+      .pipe(sourcemaps.write()) //Пропишем карты
       .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
       .pipe(reload({stream: true})); //И перезагрузим сервер
       

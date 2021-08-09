@@ -2,9 +2,8 @@
   @use 'sass:math';
 
   @import 'components/base';  
-  @import 'components/_var';  
-   @import 'components/nav';
-   @import 'components/header';
+  @import 'components/_var';   
+   @import 'components/header/header';
    @import 'components/grid';
    @import 'components/sections';
    @import 'components/button';
