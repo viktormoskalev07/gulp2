@@ -1,8 +1,7 @@
 function addScript(path ,stimeout){  
     if(localStorage.getItem(path)) {
       stimeout=1; 
-    } 
-     
+    }  
     const someJs = document.createElement('script'); 
     someJs.async=true;
     someJs.src=path;  
@@ -30,12 +29,6 @@ if(swipDelay){
         addScript('js/slider-init.js' , 0);
       }) 
       //swiper loading only if swiper delay datatime > 0
-  } 
-
-
-} 
-
-
-
-
+  }  
+}   
 })

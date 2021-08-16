@@ -13,6 +13,9 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"), 
+    postcss = require('gulp-postcss'),
+    mqpacker = require('css-mqpacker'),
+    sortCSSmq = require('sort-css-media-queries'),
     reload = browserSync.reload;
     const babel = require('gulp-babel');
  
@@ -66,7 +69,7 @@ gulp.task('js:build', async function () {
   gulp.src(path.src.js) //Найдем наш main файл
       // .pipe(rigger()) //Прогоним через rigger
       .pipe(fileinclude()) //Прогоним через fileinclude
-      .pipe(sourcemaps.init()) //Инициализируем sourcemap
+      .pipe(sourcemaps.init()) //Инициализируем sourcemap 
       .pipe(babel({
         presets: ['@babel/env']
     }))
@@ -83,6 +86,9 @@ gulp.task('style:build', async function () {
         // .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass().on('error', sass.logError)) //Скомпилируем
         .pipe(prefixer('last 2 versions')) //Добавим вендорные префиксы
+        .pipe(postcss([mqpacker({
+          sort: sortCSSmq
+        })])) //sort 
         .pipe(cssmin()) //Сожмем
         // .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
